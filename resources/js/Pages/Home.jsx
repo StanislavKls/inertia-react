@@ -1,7 +1,10 @@
 import React from "react";
 
-export default function Home() {
+export default function Home({title}) {
+
   return (
-    <h1>Welcome</h1>
+    <h1 className="text-3xl font-bold underline">
+    Hello world!
+  </h1>
   )
 }

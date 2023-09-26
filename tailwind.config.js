@@ -2,11 +2,12 @@
 module.exports = {
   content: [
     "./resources/**/*.blade.php",
-    "./resources/**/*.js",
-    "./resources/**/*.jsx",
+    "./resources/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms"),
+  ],
 }

@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
 
-Route::inertia('/login', 'views/Login');
+Route::inertia('/login', 'views/Login')->name('login');
 Route::inertia('/signup', 'views/Signup');

@@ -11,8 +11,8 @@ const user = {
 }
 
 const navigation = [
-  { name: 'Главная', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
+  { name: 'Главная', href: route('home') },
+  { name: 'Пользователи', href: route('users.list')  },
 ]
 const userNavigation = [
   { name: 'Войти', href: route('login') },

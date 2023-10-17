@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
+Route::get('/admin/users-list', [UsersController::class, 'index'])->name('users.list');
 
 Route::inertia('/login', 'views/Login')->name('login');
 Route::inertia('/signup', 'views/Signup');

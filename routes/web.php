@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::get('/admin/users-list', [UsersController::class, 'index'])->name('users.list');
+Route::get('/admin/user/{id}', [UsersController::class, 'show'])->name('user.show');
 
 Route::inertia('/login', 'views/Login')->name('login');
 Route::inertia('/signup', 'views/Signup');

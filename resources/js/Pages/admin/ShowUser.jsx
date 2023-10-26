@@ -1,6 +1,6 @@
 import Main from '../layout/Main.jsx';
 
-export default function Users({ users }) {
+export default function Users({ user }) {
 
   return (
     <Main>
@@ -13,13 +13,11 @@ export default function Users({ users }) {
         </tr>
       </thead>
       <tbody>
-        {users.map((user) => (
           <tr>
-            <td class="py-2 px-4 border-b text-center"><a href={ route('user.show', user.id) }>{user.first_name}</a></td>
+            <td class="py-2 px-4 border-b text-center">{user.first_name}</td>
             <td class="py-2 px-4 border-b text-center" >{user.last_name}</td>
             <td class="py-2 px-4 border-b text-center">{user.email}</td>
           </tr>
-        ))}
       </tbody>
     </table>
     </Main>

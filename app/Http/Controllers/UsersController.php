@@ -22,9 +22,8 @@ class UsersController extends Controller
     {
         $user = Cache::remember('user_' . $id, 600, fn() => User::findOrFail($id));
 
-        //dd($user);
         return Inertia::render('admin/ShowUser', [
-            'title' => 'Пользовател',
+            'title' => 'Пользователь',
             'user' => $user,
         ]);
     }

@@ -1,9 +1,12 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ProfileController;
+use Laravel\Telescope\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,14 +19,9 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::get('/', [IndexController::class,'index'])->name('home');
+Route::get('/users', [UsersController::class,'index'])->name('users.list');
+Route::get('/user/{id}', [UsersController::class,'show'])->name('user.show');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

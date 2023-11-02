@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 
 
 const user = {
@@ -17,7 +18,7 @@ const navigation = [
 const userNavigation = [
   { name: 'Войти', href: route('login') },
   { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
+  { name: 'Выйти', href: route('logout') },
 ]
 
 function classNames(...classes) {
@@ -95,7 +96,7 @@ export default function Main({ children }) {
                               <Menu.Item key={item.name}>
                                 {({ active }) => (
                                   <a
-                                    href={ route("login") }
+                                    href={item.href}
                                     className={classNames(
                                       active ? 'bg-gray-100' : '',
                                       'block px-4 py-2 text-sm text-gray-700'
@@ -106,8 +107,11 @@ export default function Main({ children }) {
                                 )}
                               </Menu.Item>
                             ))}
+
                           </Menu.Items>
+                          
                         </Transition>
+
                       </Menu>
                     </div>
                   </div>
